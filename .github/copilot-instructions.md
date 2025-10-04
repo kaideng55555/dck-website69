@@ -66,3 +66,37 @@ This is a React-based landing page for "Digital Currency Kid$" - a cryptocurrenc
 - Ensure all changes work with Vite's fast refresh
 - Test in development mode before building
 - Preserve the existing color scheme and visual hierarchy
+
+## Linting & Testing
+- **No linter currently configured** - Code style is maintained through manual review
+- **No test framework currently set up** - This is a simple static site without automated tests
+- **Build verification** - Run `npm run build` to ensure no build errors
+- **Manual testing** - Use `npm run dev` to test changes in the browser
+
+## Troubleshooting
+
+### Build Issues
+- If build fails, check that all dependencies are installed: `npm install`
+- Clear Vite cache if seeing stale content: `rm -rf node_modules/.vite`
+- Ensure Node.js version matches package.json requirements (20.x recommended)
+
+### Development Server Issues
+- Port conflicts: Vite uses port 5173 by default, check if port is available
+- HMR not working: Clear browser cache and restart dev server
+- Images not loading: Verify images exist in `/public` directory
+
+### Style Issues
+- Tailwind classes not working: Ensure PostCSS is configured correctly
+- Custom font not loading: Check browser console for font loading errors
+- Build output is large: This is normal for development; production build is optimized
+
+## Performance Considerations
+- Images in `/public` are served as-is - optimize images before adding them
+- Tailwind CSS is purged in production to reduce bundle size
+- Vite automatically code-splits for optimal loading
+- Consider lazy loading if adding more sections or images
+
+## Error Handling
+- This is a static site with no dynamic data fetching, so minimal error handling is needed
+- Focus on handling missing images gracefully (consider alt text)
+- Ensure responsive design works across all viewport sizes
